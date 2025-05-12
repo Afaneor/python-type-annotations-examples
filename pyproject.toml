@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "typing-example"
+version = "0.1.0"
+description = ""
+authors = ["npavlin <np@letsnova.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mypy = "^1.15.0"
+
+
+# pyproject.toml
+monkeytype = "^23.3.0"
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+# Можно настраивать отдельные модули
+[[tool.mypy.overrides]]
+module = "a.*"
+disallow_untyped_defs = true
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
